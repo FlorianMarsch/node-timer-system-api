@@ -23,3 +23,6 @@ setInterval(pollTheMinute, minutely);
 console.log('Node worker is running, start at '+JSON.stringify(new Date()));
 publisher.publish("debug", 'Node worker is running');
 
+process.on('uncaughtException', function (err) {
+	  console.error(err.stack);
+	});
